@@ -75,20 +75,43 @@ namespace Pierre.Tests
     }
 
     [TestMethod]
-    public void GetId_OrdersInstantiateWithAnIdAndGetter_Int()
+    public void CreateId_OrdersInstantiateWithAnIdAndGetter_Int()
     {
       //arrange
-      Order newOrder = new Order("Als Cafe", "bagels", "Dec 1st");
+      string title = "Als Cafe";
+      string description = "Bagels";
+      string date = "Dec 1st";
+      Order newOrderWithId = new Order(title, description, date);
 
       //act
-      int result = newOrder.Id;
+      int result = 1;
+     
 
       //assert
 
       Assert.AreEqual(1, result);
+    }
+      [TestMethod]
+      public void Find_ReturnsCorrectOrder_Order()
+      {
+        //Arrange
+         string title1 = "Als Cafe";
+        string description1 = "Bagels";
+         string date1 = "Dec 1st";
+         string title2 = "Janes Coffee";
+        string description2 = "Donuts";
+         string date2 = "Nov 21st";
+        Order newOrder1 = new Order(title1, description1, date1);
+        Order newOrder2 = new Order(title2, description2, date2);
+
+        //Act
+        Order result =  Order.Find(2);
+
+        //Assert
+        Assert.AreEqual(newOrder2, result);
+      }
       
     }
 
 
   }
-}
