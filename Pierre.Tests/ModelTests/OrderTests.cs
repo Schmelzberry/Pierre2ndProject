@@ -71,10 +71,23 @@ namespace Pierre.Tests
       //assert
       Assert.AreEqual(resultPrice, testOrder.CalculatePrice());
       Assert.AreEqual(resultMessage, testOrder.DisplayMessage);
-
       
     }
 
+    [TestMethod]
+    public void GetId_OrdersInstantiateWithAnIdAndGetter_Int()
+    {
+      //arrange
+      Order newOrder = new Order("Als Cafe", "bagels", "Dec 1st");
+
+      //act
+      int result = newOrder.Id;
+
+      //assert
+
+      Assert.AreEqual(1, result);
+      
+    }
 
 
   }
