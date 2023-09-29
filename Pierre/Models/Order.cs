@@ -20,11 +20,15 @@ namespace Pierre.Models
             Instances.Add(this);
         }
 
-        public static List<Order> GetAll()
+        public static List<Order> GetAllOrders()
         {
-            return Instances;
+          return Instances;
         }
 
+        public static void ClearAllOrders()
+        {
+          Instances.Clear();
+        }
         public int CalculatePrice()
         {
             if (Description.ToLower() == "bagels")
