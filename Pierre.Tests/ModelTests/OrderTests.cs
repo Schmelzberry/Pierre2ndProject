@@ -28,6 +28,19 @@ namespace Pierre.Tests
       Assert.AreEqual("Dec 1st", testOrder.Date);
     }
 
+      [TestMethod]
+    public void GetPrice_CalculatesPriceForBakedGoods_Int()
+    {
+      //arrange
+      Order testOrder = new Order("Als Cafe", "bagels", "Dec 1st");
+      //act
+      testOrder.GetPrice();
+      result = 10;
+      //assert
+      Assert.AreEqual(result, testOrder.GetPrice());
+      
+    }
+
 
 
   }
