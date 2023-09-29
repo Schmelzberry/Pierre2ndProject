@@ -19,10 +19,11 @@ namespace Pierre.Controllers
     }
 
     [HttpPost("/order")]
-    public ActionResult Create(string description)
+    public ActionResult Create(string title, string description, string date)
     {
-      Order myOrder = new Order(description);
-      return View("Index", myOrder);
+      Order myOrder = new Order(title, description, date);
+      myOrder.Description = description;
+      return View("Index");
     }
 
 
