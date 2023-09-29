@@ -11,7 +11,7 @@ namespace Pierre.Controllers
     public ActionResult Index()
     {
 
-      List<Order> allOrders = Order.GetAll();
+      List<Order> allOrders = Order.GetAllOrders();
       return View(allOrders);
     }
 
@@ -26,6 +26,13 @@ namespace Pierre.Controllers
     {
       Order myOrder = new Order(title, description, date);
       return RedirectToAction("Index");
+    }
+
+    [HttpPost("/orders/delete")]
+    public ActionResult DeleteAll()
+    {
+      Order.ClearAllOrders();
+      return View();
     }
 
 
