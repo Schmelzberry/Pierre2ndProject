@@ -36,12 +36,14 @@ namespace Pierre.Tests
       //act
       testOrder.CalculatePrice();
       int result = 10;
+      string resultMessage = "Bagels coming right up!";
       //assert
       Assert.AreEqual(result, testOrder.CalculatePrice());
+      Assert.AreEqual(resultMessage, testOrder.DisplayMessage);
       
     }
 
-       [TestMethod]
+     [TestMethod]
     public void CalculatePrice_CalculatesPriceForDonuts_Int()
     {
       //arrange
@@ -49,8 +51,27 @@ namespace Pierre.Tests
       //act
       testOrder.CalculatePrice();
       int result = 15;
+      string resultMessage = "Donuts? You must be nuts!";
       //assert
       Assert.AreEqual(result, testOrder.CalculatePrice());
+      Assert.AreEqual(resultMessage, testOrder.DisplayMessage);
+      
+    }
+
+       [TestMethod]
+    public void CalculatePrice_CalculatesPriceForInvalidEntry_Int()
+    {
+      //arrange
+      Order testOrder = new Order("Als Cafe", "croissants", "Dec 1st");
+      
+      //act
+      testOrder.CalculatePrice();
+      int resultPrice = 0;
+      string resultMessage = "We don't have any of those, try again if you'd like to order!";
+      //assert
+      Assert.AreEqual(resultPrice, testOrder.CalculatePrice());
+      Assert.AreEqual(resultMessage, testOrder.DisplayMessage);
+
       
     }
 
