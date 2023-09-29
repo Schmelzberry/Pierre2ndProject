@@ -29,15 +29,15 @@ namespace Pierre.Tests
     }
 
       [TestMethod]
-    public void GetPrice_CalculatesPriceForBakedGoods_Int()
+    public void CalculatePrice_CalculatesPriceForBakedGoods_Int()
     {
       //arrange
       Order testOrder = new Order("Als Cafe", "bagels", "Dec 1st");
       //act
-      testOrder.GetPrice();
-      result = 10;
+      testOrder.CalculatePrice();
+      int result = 10;
       //assert
-      Assert.AreEqual(result, testOrder.GetPrice());
+      Assert.AreEqual(result, testOrder.CalculatePrice());
       
     }
 
