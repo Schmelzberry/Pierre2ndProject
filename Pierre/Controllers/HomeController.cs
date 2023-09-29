@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
-using ToDoList.Models;
+using Pierre.Models;
 
-namespace ToDoList.Controllers
+namespace Pierre.Controllers
 {
   public class HomeController : Controller
   {
@@ -9,8 +9,7 @@ namespace ToDoList.Controllers
     [Route("/")]
     public ActionResult Index()
     {
-      Item starterItem = new Item("Add first item to order form");
-      return View(starterItem);
+      return View();
     }
 
 
