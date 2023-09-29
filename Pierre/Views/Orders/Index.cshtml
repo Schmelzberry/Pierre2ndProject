@@ -22,7 +22,7 @@
     <ul>
       @foreach (Order order in Model)
       {
-        <li>@order.Description</li>
+        <li><a href='/orders/@order.Id'>@order.Description</a></li>
       }
     </ul>
 

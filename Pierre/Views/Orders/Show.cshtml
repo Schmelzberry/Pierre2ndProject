@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Order Form</title>
+    <title>My To-Do List!</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -10,10 +10,14 @@
       crossorigin="anonymous">
   </head>
   <body>
-    <form action="/orders" method="post">
-      <label for="description">Which kind of baked good would please you?</label>
-      <input id="description" name="description" type="text">
-      <button type="submit">Submit</button>
-    </form>
+    <h1>Order Details: </h1>
+
+    <h2>@Model.Title</h2>
+    <h2>@Model.Description</h2>
+    <h2>@Model.Date</h2>
+    <h2> The Price of a @Model.Title is: @Model.Price </h2>
+
+    <a href='/orders/new'>Add another item</a>
+    <a href='/orders'>View all items</a>
   </body>
 </html>
