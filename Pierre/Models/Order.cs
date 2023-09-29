@@ -10,6 +10,7 @@ namespace Pierre.Models
         public string Date { get; set; }
         public string DisplayMessage { get; set; }
         public static List<Order> Instances = new List<Order> { };
+        public int Id { get;}
 
         public Order(string title, string description, string date)
         {
@@ -18,13 +19,14 @@ namespace Pierre.Models
             Date = date;
             Price = 0;
             Instances.Add(this);
+            Id = Instances.Count;
         }
-
+        // still need to test for this
         public static List<Order> GetAllOrders()
         {
           return Instances;
         }
-
+        // still need to test for this
         public static void ClearAllOrders()
         {
           Instances.Clear();
