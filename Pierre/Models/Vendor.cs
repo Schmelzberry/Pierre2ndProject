@@ -7,14 +7,14 @@ namespace Pierre.Models
     private static List <Vendor> Instances = new List<Vendor>{ };
     public string Name { get; set; }
     public int Id { get; }
-    List<Order> Order {get; set; }
+    public List<Order> Orders {get; set; }
 
     public Vendor(string vendorName)
     {
       Name = vendorName;
       Instances.Add(this);
       Id = Instances.Count;
-      Order = new List<Order>{ };
+      Orders = new List<Order>{ };
     }
 
     public static void ClearVendors()
@@ -29,6 +29,10 @@ namespace Pierre.Models
     public static Vendor Find(int searchId)
     {
       return Instances[searchId-1];
+    }
+    public void AddOrder(Order order)
+    {
+      Orders.Add(order);
     }
   }
 }
