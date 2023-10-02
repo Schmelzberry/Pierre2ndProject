@@ -11,13 +11,13 @@
   </head>
   <body>
     <h1>Order Details: </h1>
+    <h2>Vendor: @Model["vendor"].Name</h2>
+    <h2>@Model["order"].Title</h2>
+    <h2>@Model["order"].Description</h2>
+    <h2>@Model["order"].Date</h2>
+    <h2> The price is: $ @Model["order"].Price </h2>
 
-    <h2>@Model.Title</h2>
-    <h2>@Model.Description</h2>
-    <h2>@Model.Date</h2>
-    <h2> The price of @Model.Description is: $ @Model.Price </h2>
-
-    <a href='/orders/new'>Add another item</a>
-    <a href='/orders'>View all items</a>
+    <a href='/vendors/@Model["vendor"].Id/orders/new'>Add another order</a>
+    <a href='/vendors'>View all vendors</a>
   </body>
 </html>
