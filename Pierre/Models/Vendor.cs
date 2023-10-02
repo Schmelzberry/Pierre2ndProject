@@ -8,10 +8,12 @@ namespace Pierre.Models
     public string Name { get; set; }
     public int Id { get; }
     public List<Order> Orders {get; set; }
+    public string Description { get; set; }
 
     public Vendor(string vendorName)
     {
       Name = vendorName;
+      Description = vendorName;
       Instances.Add(this);
       Id = Instances.Count;
       Orders = new List<Order>{ };

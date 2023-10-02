@@ -12,10 +12,14 @@
   <body>
   <h1>Add a new order to @Model.Name</h1>
 
-    <form action="/vendors/@Model.Id/items" method="post">
+    <form action="/vendors/@Model.Id/orders" method="post">
       <input id="vendorId" name="vendorId" type="hidden" value="@Model.Id">
-      <label for="description">Whatchu want from the bakery?</label>
-      <input id="description" name="description" type="text">
+      <label for="title">Order title</label><br>
+      <input id="title" name="title" type="text" placeholder="Al's quarterly order"><br>
+      <label for="description">Describe whatchu want from the bakery</label><br>
+      <input id="description" name="description" type="text" placeholder="bagels"><br>
+      <label for="date">When do you want it?</label><br>
+      <input id="date" name="date" type="text" placeholder="Dec 1st"><br>
       <button type="submit">Add Order</button>
     </form>
   </body>

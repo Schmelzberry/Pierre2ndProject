@@ -11,7 +11,7 @@
 * MSTest
 
 ### Description
-Welcome to Pierre's bakery! Use this console app to order bread and pastries from a fictional baker named Pierre. He offers some great deals.
+A tool for Pierre to track his vendors for his bakery business. 
 
 ### Install Requirements
 
@@ -22,7 +22,7 @@ Welcome to Pierre's bakery! Use this console app to order bread and pastries fro
 ```bash
 $ git clone https://github.com/Schmelzberry/Pierre2ndProject.git
 ```
-6. In the command line, navigate to the `Pierre` subdirectory and run the following command to compile and execute the console application ```$ dotnet run```
+6. In the command line, navigate to the `Pierre` subdirectory and run the following command to build and open the project in your browser ```$ dotnet watch run```
 7. If you wish to see Model tests, from the command line, navigate to the `Pierre.Tests` subdirectory and run the following command from said subdirectory to run tests ```$ dotnet run```
 
 ## Known Bugs

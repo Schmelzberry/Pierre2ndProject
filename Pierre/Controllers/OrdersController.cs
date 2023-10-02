@@ -30,7 +30,7 @@ namespace Pierre.Controllers
             Dictionary<string, object> model = new Dictionary<string, object>();
             model.Add("order", foundOrder);
             model.Add("vendor", vendor);
-            return View(foundOrder);
+            return View(model);
         }
     }
 }
