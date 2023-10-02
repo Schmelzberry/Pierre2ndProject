@@ -71,6 +71,26 @@ namespace Pierre.Tests
           // assert
           Assert.AreEqual(newVendor2, result);
         }
+         [TestMethod]
+  public void AddOrder_AllowsOrdersWithinVendor_ItemList()
+  {
+    //Arrange
+    string orderTitle = "Als Cafe";
+    string orderDescription = "bagels";
+    string orderDate = "Dec 1st";
+    Order newOrder = new Order(orderTitle, orderDescription, orderDate);
+    List<Order> newList = new List<Order> { newOrder };
+    string vendorName = "Als Breakfast";
+    Vendor newVendor = new Vendor(vendorName);
+    newVendor.AddOrder(newOrder);
+
+    //Act
+    List<Order> result = newVendor.Orders;
+
+    //Assert
+    CollectionAssert.AreEqual(newList, result);
+  }
+
 
     }
 }
