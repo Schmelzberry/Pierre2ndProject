@@ -46,5 +46,19 @@ namespace Pierre.Tests
             //Assert
             Assert.AreEqual(1, result);
         }
+        [TestMethod]
+        public void GetAllVendors_ReturnsAllVendorObjects_VendorList()
+        {  // arrange
+          string vendorName01 = "Als Breakfast";
+          string vendorName02 = "Suzie's Doozies";
+          Vendor newVendor1 = new Vendor(vendorName01);
+          Vendor newVendor2 = new Vendor(vendorName02);
+          List<Vendor> newList = new List<Vendor> { newVendor1, newVendor2 };
+          // act
+          List<Vendor> result = Vendor.GetAllVendors();
+          // assert
+          CollectionAssert.AreEqual(newList, result);
+        }
+
     }
 }
